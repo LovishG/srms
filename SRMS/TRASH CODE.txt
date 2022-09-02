@@ -1,0 +1,17 @@
+TRASH  S . NO 1 
+
+<div class="form-group">
+    <label for="exampleFormControlSelect1">Select your class</label>
+    <select name="classId" class="form-control" id="default" required="required">
+        <option value="">Select Class</option>
+            <?php 
+                    $sql = "SELECT * FROM `classes`";
+                    $result = mysqli_query($conn, $sql);
+                    while($row = mysqli_fetch_assoc($result)){ 
+            ?>
+                        
+                    <option name="ClassId" value='<?php echo $row[`ClassId`] ; ?>'><?php echo $row['ClassName'] ; ?> <?php echo $row['Section'] ; ?></option>
+                        
+                    }
+            <?php    }?>
+    </select>
